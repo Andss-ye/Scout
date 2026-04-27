@@ -1,0 +1,38 @@
+{
+  "name": "scout",
+  "version": "0.1.0",
+  "description": "Claude Code Setup Manager — manage, version, and apply config presets per project",
+  "type": "module",
+  "bin": {
+    "scout": "./dist/cli.js"
+  },
+  "main": "./dist/cli.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsc",
+    "test": "node --import tsx --test tests/spec.test.ts tests/preset-manager.test.ts tests/file-applier.test.ts tests/cleaner.test.ts",
+    "test:watch": "node --import tsx --test --watch tests/spec.test.ts tests/preset-manager.test.ts tests/file-applier.test.ts tests/cleaner.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "fast-glob": "^3.3.2",
+    "gray-matter": "^4.0.3",
+    "ignore": "^5.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  },
+  "license": "BUSL-1.1"
+}
