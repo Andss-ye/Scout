@@ -14,10 +14,11 @@ export async function runClean(options: CleanCommandOptions): Promise<void> {
   if (!anyFlag) {
     process.stderr.write(
       chalk.yellow("nothing to clean. pass one of:\n") +
-        "  --cache         remove scan cache\n" +
-        "  --orphans       remove preset dirs/registry entries that are out of sync\n" +
-        "  --preset <name> remove a single preset\n" +
-        "  --all           remove ~/.scout entirely\n"
+        "  --cache           delete ~/.scout/scan-cache.json produced by `scout scan`\n" +
+        "  --orphans         delete preset dirs with no registry entry and registry entries pointing to missing dirs\n" +
+        "  --preset <name>   delete the named preset and remove it from the registry\n" +
+        "  --all             wipe ~/.scout entirely — all presets, the registry, and the scan cache\n" +
+        "  --dry-run         preview what would be deleted without actually deleting anything\n"
     );
     process.exit(1);
   }

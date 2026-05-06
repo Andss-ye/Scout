@@ -24,7 +24,12 @@ export async function applyPreset(
 ): Promise<ApplyResult> {
   const src = presetDir(presetName);
   if (!(await exists(src))) {
-    throw new Error(`preset "${presetName}" not found at ${src}`);
+    throw new Error(
+      `preset "${presetName}" not found at ${src}\n` +
+        `  The registry has an entry but the directory is missing.\n` +
+        `  Run: scout clean --orphans   (removes stale registry entries)\n` +
+        `  Then: scout save "${presetName}"   (re-create the preset)`
+    );
   }
 
   const written: string[] = [];

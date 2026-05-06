@@ -105,8 +105,8 @@ async function removeOnePreset(
     removed.push(dir);
     if (!dryRun) await rmrf(dir);
   }
+  removed.push(`registry:${name}`);
   if (!dryRun) await removePreset(name);
-  else removed.push(`registry:${name}`);
 
   return { removed, freedBytes };
 }

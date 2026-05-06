@@ -38,11 +38,11 @@ program
 program
   .command("clean")
   .description("Remove cached/unused scout data")
-  .option("--cache", "remove scan cache")
-  .option("--orphans", "remove preset dirs/registry entries that are out of sync")
-  .option("--preset <name>", "remove a single preset")
-  .option("--all", "remove ~/.scout entirely")
-  .option("--dry-run", "show what would be removed without removing")
+  .option("--cache", "delete ~/.scout/scan-cache.json produced by `scout scan`")
+  .option("--orphans", "delete preset dirs with no registry entry and registry entries pointing to missing dirs")
+  .option("--preset <name>", "delete the named preset and remove it from the registry")
+  .option("--all", "wipe ~/.scout entirely — all presets, the registry, and the scan cache")
+  .option("--dry-run", "preview what would be deleted without actually deleting anything")
   .action(wrap(runClean));
 
 program.parseAsync().catch((err: unknown) => {
