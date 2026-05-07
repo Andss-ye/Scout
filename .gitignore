@@ -9,3 +9,4 @@ CLAUDE.local.md
 coverage/
 *.md
 !README.md
+!CHANGELOG.md

@@ -1,5 +1,5 @@
 {
-  "name": "@andss-ye/scout-cc",
+  "name": "scout-cc",
   "version": "0.1.0",
   "description": "Claude Code Setup Manager — manage, version, and apply config presets per project",
   "type": "module",
@@ -37,9 +37,6 @@
     "typescript": "^5.5.0"
   },
   "license": "BUSL-1.1",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/andss-ye/scout.git"
