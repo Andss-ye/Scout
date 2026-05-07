@@ -1,10 +1,10 @@
 {
-  "name": "scout",
+  "name": "scout-cc",
   "version": "0.1.0",
   "description": "Claude Code Setup Manager — manage, version, and apply config presets per project",
   "type": "module",
   "bin": {
-    "scout": "./dist/cli.js"
+    "scout": "dist/cli.js"
   },
   "main": "./dist/cli.js",
   "files": [
@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "dev": "tsx src/cli.ts",
-    "build": "tsc",
+    "build": "tsc && chmod +x dist/cli.js",
     "test": "node --import tsx --test tests/spec.test.ts tests/preset-manager.test.ts tests/file-applier.test.ts tests/cleaner.test.ts",
     "test:watch": "node --import tsx --test --watch tests/spec.test.ts tests/preset-manager.test.ts tests/file-applier.test.ts tests/cleaner.test.ts",
     "typecheck": "tsc --noEmit"
