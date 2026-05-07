@@ -1,5 +1,5 @@
 {
-  "name": "scout-cc",
+  "name": "@andss-ye/scout-cc",
   "version": "0.1.0",
   "description": "Claude Code Setup Manager — manage, version, and apply config presets per project",
   "type": "module",
@@ -15,6 +15,8 @@
   "scripts": {
     "dev": "tsx src/cli.ts",
     "build": "tsc && chmod +x dist/cli.js",
+    "publish:npm": "npm publish --registry https://registry.npmjs.org --access public",
+    "publish:github": "npm publish --registry https://npm.pkg.github.com --access public",
     "test": "node --import tsx --test tests/spec.test.ts tests/preset-manager.test.ts tests/file-applier.test.ts tests/cleaner.test.ts",
     "test:watch": "node --import tsx --test --watch tests/spec.test.ts tests/preset-manager.test.ts tests/file-applier.test.ts tests/cleaner.test.ts",
     "typecheck": "tsc --noEmit"
@@ -34,5 +36,12 @@
     "tsx": "^4.19.0",
     "typescript": "^5.5.0"
   },
-  "license": "BUSL-1.1"
+  "license": "BUSL-1.1",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andss-ye/scout.git"
+  }
 }
