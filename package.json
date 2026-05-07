@@ -1,6 +1,6 @@
 {
   "name": "scout-cc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Claude Code Setup Manager — manage, version, and apply config presets per project",
   "type": "module",
   "bin": {
